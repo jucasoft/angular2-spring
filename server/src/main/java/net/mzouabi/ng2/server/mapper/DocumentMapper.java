@@ -10,7 +10,7 @@ import org.mapstruct.ReportingPolicy;
 public interface DocumentMapper {
     public DocumentDTO toDTO(Document value);
 
-    public Document toEntiDocumenty(DocumentDTO value);
+    public Document toEntity(DocumentDTO value);
 
     public void mapToEntity(DocumentDTO valueDTO, @MappingTarget Document value);
 }

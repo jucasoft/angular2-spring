@@ -42,7 +42,7 @@ export class DocumentListComponent implements OnInit, Table<Document> {
   }
 
   goToDetails(item:IEntity) {
-    this.router.navigate(['item', item.id]);
+    this.router.navigate(['document/item', item.id]);
   }
 
   delete(item:IEntity) {

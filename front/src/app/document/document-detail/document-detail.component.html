@@ -1,3 +1,50 @@
-<p>
-  document-detail works!
-</p>
+<template [ngIf]="item != null">
+
+  <h3 class="page-header">item #{{item.id}}</h3>
+
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>Entity</strong></p>
+      <p>{{item.entity}}</p>
+    </div>
+
+    <div class="col-md-12">
+      <p><strong>desciption</strong></p>
+      <p>{{item.desciption}}</p>
+    </div>
+
+    <div class="col-md-12">
+      <p><strong>type</strong></p>
+      <p>{{item.type}}</p>
+    </div>
+  </div>
+
+  <hr />
+  <div id="actions" class="row">
+    <div class="col-md-12">
+      <a (click)="back()" class="btn btn-primary">Back</a>
+      <!-- href="edit.html" class="btn btn-default">Edit</a-->
+      <a href="#" class="btn btn-default" data-toggle="modal" data-target="#delete-modal">Delete</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="modalLabel">Delete</h4>
+        </div>
+        <div class="modal-body">
+          Do you want to remove this item ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="delete(item)" class="btn btn-primary" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

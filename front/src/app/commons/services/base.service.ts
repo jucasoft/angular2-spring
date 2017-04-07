@@ -34,8 +34,8 @@ export class BaseService<T> implements IService<T> {
     return null;
   }
 
-  get(id:string): Observable<T> {
-    return null;
+  get(id:number): Observable<T> {
+    return this.http.get(`${this.getUrl()}/${id}`).map(this.extractData).publish().refCount();
   }
 
   search(criteria: ICriteria): Observable<PaginationPage<T>> {

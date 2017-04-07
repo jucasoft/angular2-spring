@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute, Router} from "@angular/router";
+import {DocumentService} from "../service/document.service";
+import {EntityBase} from "@commons/model/vo/entity-base";
+import {Observable} from "rxjs/Observable";
+import {doNothing, hideLoading, showLoading} from "../../commons";
+import {Response} from "@angular/http";
 
 @Component({
   selector: 'app-document-detail',
@@ -7,9 +13,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocumentDetailComponent implements OnInit {
 
-  constructor() { }
+  item: EntityBase;
 
-  ngOnInit() {
+  constructor(private router: Router, private route: ActivatedRoute, private service: DocumentService) {
   }
 
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.service.get(Number(params['id'])).subscribe(value => this.item = value);
+    });
+
+  }
+
+  delete(person) {
+    let observable: Observable<Response> = this.service.delete(person.id);
+    showLoading();
+    observable.subscribe(doNothing, hideLoading, () => {
+      this.router.navigate(['']);
+      hideLoading();
+    });
+  }
+
+  back() {
+    history.back();
+  }
 }

@@ -5,7 +5,7 @@ import * as Rx from 'rxjs/Rx';
 
 import {PersonService} from '../person.service';
 import {Person} from '../domain';
-import {showLoading, hideLoading, doNothing} from '../commons'
+import {showLoading, hideLoading, doNothing} from '../commons';
 
 @Component({
     selector: 'app-person',

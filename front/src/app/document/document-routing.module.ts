@@ -7,8 +7,8 @@ const routesD: Routes = [
   {
     path: 'document',
     children: [
-      {path: '', component: DocumentListComponent},
-      {path: '/:id', component: DocumentDetailComponent}
+      {path: 'list', component: DocumentListComponent},
+      {path: 'item/:id', component: DocumentDetailComponent}
     ]
   }
 ];
