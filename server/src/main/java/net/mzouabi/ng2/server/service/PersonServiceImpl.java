@@ -18,13 +18,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class PersonServiceImpl implements PersonService {
 
-    final static Logger LOG = LoggerFactory.getLogger(PersonServiceImpl.class);
+        final static Logger LOG = LoggerFactory.getLogger(PersonServiceImpl.class);
 
-    @Autowired
-    PersonRepository personRepository;
+        @Autowired
+        PersonRepository personRepository;
 
-    @Autowired
-    PersonMapper personMapper;
+        @Autowired
+        PersonMapper personMapper;
 
     @Override
     public Page<PersonDTO> findPersons(Pageable pageable) {

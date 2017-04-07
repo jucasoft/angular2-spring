@@ -1,0 +1,63 @@
+<template [ngIf]="list != null">
+  <hr/>
+  <div id="list" class="row">
+
+    <div class="table-responsive col-md-12">
+      <table class="table table-striped" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+          <th>
+            <app-table-sort [table]="self" [page]="list" [label]="'Entity'" [property]="'entity'"></app-table-sort>
+          </th>
+          <th>
+            <app-table-sort [table]="self" [page]="list" [label]="'Desciption'" [property]="'desciption'"></app-table-sort>
+          </th>
+          <th>
+            <app-table-sort [table]="self" [page]="list" [label]="'Type'" [property]="'type'"></app-table-sort>
+          </th>
+          <th class="actions">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr *ngFor="let item of list.content">
+          <td>{{item.entity}}</td>
+          <td>{{item.desciption}}</td>
+          <td>{{item.type}}</td>
+          <td class="actions">
+            <a class="btn btn-success btn-xs" (click)="goToDetails(item)">Details</a>
+            <!--a class="btn btn-warning btn-xs" href="edit.html">Edit</a-->
+            <a class="btn btn-danger btn-xs" (click)="currentItem=item" data-toggle="modal"
+               data-target="#delete-modal">Delete</a>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div> <!-- /#list -->
+
+  <app-table-pagination [table]="self" [page]="list"></app-table-pagination>
+
+  <!-- Modal -->
+  <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span
+            aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="modalLabel">Delete</h4>
+        </div>
+        <div class="modal-body">
+          Do you want to remove this item ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="delete(currentItem)" class="btn btn-primary" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

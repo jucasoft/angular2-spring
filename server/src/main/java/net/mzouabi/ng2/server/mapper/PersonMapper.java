@@ -5,7 +5,6 @@ import net.mzouabi.ng2.server.model.Person;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.ReportingPolicy;
-import org.mapstruct.TargetType;
 
 /**
  * Created by mouradzouabi on 04/12/15.

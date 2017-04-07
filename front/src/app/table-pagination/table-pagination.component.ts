@@ -9,6 +9,7 @@ import * as Rx from "rxjs/Rx";
     templateUrl: './table-pagination.component.html',
     styleUrls: ['./table-pagination.component.css']
 })
+
 export class TablePaginationComponent implements OnInit, OnChanges {
 
     @Input() table: Table<any>;

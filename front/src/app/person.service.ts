@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Person} from './domain'
 import {PaginationPage, PaginationPropertySort} from './pagination';
-import {webServiceEndpoint} from './commons';
 import {Http, Response, URLSearchParams, RequestOptions} from '@angular/http';
 import * as Rx from "rxjs/Rx";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publish';
+import {environment} from "@environments/environment";
 
 @Injectable()
 export class PersonService {
@@ -25,15 +25,15 @@ export class PersonService {
         let options = new RequestOptions({
             search: params
         });
-        return this.http.get(`${webServiceEndpoint}/person`, options).map(this.extractData).publish().refCount();
+        return this.http.get(`${environment.webServiceEndpoint}/person`, options).map(this.extractData).publish().refCount();
     }
 
     getPerson(id: number): Rx.Observable<Person> {
-        return this.http.get(`${webServiceEndpoint}/person/${id}`).map(this.extractData).publish().refCount();
+        return this.http.get(`${environment.webServiceEndpoint}/person/${id}`).map(this.extractData).publish().refCount();
     }
 
     deletePerson(id: number): Rx.Observable<Response> {
-        return this.http.delete(`${webServiceEndpoint}/person/${id}`).publish().refCount();
+        return this.http.delete(`${environment.webServiceEndpoint}/person/${id}`).publish().refCount();
     }
 
     private extractData(res: Response) {
