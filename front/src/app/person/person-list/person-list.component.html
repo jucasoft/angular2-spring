@@ -1,4 +1,4 @@
-<template [ngIf]="personPage != null">
+<template [ngIf]="list != null">
 
     <!--div id="top" class="row">
         <div class="col-sm-3">
@@ -28,22 +28,22 @@
             <table class="table table-striped" cellspacing="0" cellpadding="0">
                 <thead>
                 <tr>
-                    <th><app-table-sort [table]="self" [page]="personPage" [label]="'First Name'" [property]="'firstname'" ></app-table-sort></th>
-                    <th><app-table-sort [table]="self" [page]="personPage" [label]="'Last Name'" [property]="'lastname'" ></app-table-sort></th>
-                    <th><app-table-sort [table]="self" [page]="personPage" [label]="'Age'" [property]="'age'" ></app-table-sort></th>
+                    <th><app-table-sort [table]="self" [page]="list" [label]="'First Name'" [property]="'firstname'" ></app-table-sort></th>
+                    <th><app-table-sort [table]="self" [page]="list" [label]="'Last Name'" [property]="'lastname'" ></app-table-sort></th>
+                    <th><app-table-sort [table]="self" [page]="list" [label]="'Age'" [property]="'age'" ></app-table-sort></th>
                     <th class="actions">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
 
-                <tr *ngFor="let person of personPage.content">
-                    <td>{{person.firstname}}</td>
-                    <td>{{person.lastname}}</td>
-                    <td>{{person.age}}</td>
+                <tr *ngFor="let item of list.content">
+                    <td>{{item.firstname}}</td>
+                    <td>{{item.lastname}}</td>
+                    <td>{{item.age}}</td>
                     <td class="actions">
-                        <a class="btn btn-success btn-xs" (click)="goToDetails(person)">Details</a>
+                        <a class="btn btn-success btn-xs" (click)="goToDetails(item)">Details</a>
                         <!--a class="btn btn-warning btn-xs" href="edit.html">Edit</a-->
-                        <a class="btn btn-danger btn-xs" (click)="currentPerson=person" data-toggle="modal" data-target="#delete-modal">Delete</a>
+                        <a class="btn btn-danger btn-xs" (click)="currentPerson=item" data-toggle="modal" data-target="#delete-modal">Delete</a>
                     </td>
                 </tr>
 
@@ -53,7 +53,7 @@
 
     </div> <!-- /#list -->
 
-    <app-table-pagination [table]="self" [page]="personPage"></app-table-pagination>
+    <app-table-pagination [table]="self" [page]="list"></app-table-pagination>
 
     <!-- Modal -->
     <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
@@ -61,7 +61,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modalLabel">Delete person</h4>
+                    <h4 class="modal-title" id="modalLabel">Delete</h4>
                 </div>
                 <div class="modal-body">
                     Do you want to remove this item ?
