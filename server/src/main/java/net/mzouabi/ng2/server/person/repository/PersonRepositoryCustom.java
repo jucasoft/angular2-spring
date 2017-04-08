@@ -1,4 +1,4 @@
-package net.mzouabi.ng2.server.repository;
+package net.mzouabi.ng2.server.person.repository;
 
 public interface PersonRepositoryCustom {
 

@@ -1,8 +1,6 @@
-package net.mzouabi.ng2.server.model;
+package net.mzouabi.ng2.server.person.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.util.Date;
 
 @Entity
 public class Person extends AbstractEntity {

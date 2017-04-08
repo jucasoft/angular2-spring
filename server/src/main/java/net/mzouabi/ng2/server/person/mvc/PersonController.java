@@ -1,7 +1,7 @@
-package net.mzouabi.ng2.server.mvc;
+package net.mzouabi.ng2.server.person.mvc;
 
-import net.mzouabi.ng2.server.dto.PersonDTO;
-import net.mzouabi.ng2.server.service.PersonService;
+import net.mzouabi.ng2.server.person.dto.PersonDTO;
+import net.mzouabi.ng2.server.person.service.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;

@@ -1,4 +1,6 @@
-package net.mzouabi.ng2.server.dto;
+package net.mzouabi.ng2.server.person.dto;
+
+import net.mzouabi.ng2.server.dto.AbstractDTO;
 
 import java.util.Date;
 

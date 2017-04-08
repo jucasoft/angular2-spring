@@ -1,7 +1,7 @@
-package net.mzouabi.ng2.server.mapper;
+package net.mzouabi.ng2.server.person.mapper;
 
-import net.mzouabi.ng2.server.dto.PersonDTO;
-import net.mzouabi.ng2.server.model.Person;
+import net.mzouabi.ng2.server.person.dto.PersonDTO;
+import net.mzouabi.ng2.server.person.model.Person;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.ReportingPolicy;

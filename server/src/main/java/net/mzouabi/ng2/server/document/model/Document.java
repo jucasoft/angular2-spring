@@ -1,6 +1,6 @@
 package net.mzouabi.ng2.server.document.model;
 
-import net.mzouabi.ng2.server.model.AbstractEntity;
+import net.mzouabi.ng2.server.person.model.AbstractEntity;
 
 import javax.persistence.Entity;
 

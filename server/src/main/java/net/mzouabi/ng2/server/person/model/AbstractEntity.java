@@ -1,4 +1,4 @@
-package net.mzouabi.ng2.server.model;
+package net.mzouabi.ng2.server.person.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
