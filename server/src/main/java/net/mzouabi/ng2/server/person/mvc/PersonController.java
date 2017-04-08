@@ -23,33 +23,33 @@ public class PersonController {
     final static Logger LOG = LoggerFactory.getLogger(PersonController.class);
 
     @Inject
-    PersonService personService;
+    PersonService service;
 
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Page<PersonDTO>> findAllPerson(Pageable pageable, HttpServletRequest req) {
-        Page<PersonDTO> page = personService.findPersons(pageable);
+        Page<PersonDTO> page = service.search(pageable);
         return new ResponseEntity<>(page, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<PersonDTO> getPerson(@PathVariable Long id, HttpServletRequest req) {
-        PersonDTO person = personService.getPerson(id);
+        PersonDTO person = service.get(id);
         return new ResponseEntity<>(person, HttpStatus.OK);
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public void createPerson(@RequestBody PersonDTO personDTO) {
-        personService.savePerson(personDTO);
+        service.create(personDTO);
     }
 
     @RequestMapping(value = "", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public void updatePerson(@RequestBody PersonDTO personDTO) {
-        personService.updatePerson(personDTO);
+        service.update(personDTO);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public void deletePerson(@PathVariable Long id) {
-        personService.deletePerson(id);
+        service.delete(id);
     }
 }
 

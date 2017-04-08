@@ -1,6 +1,6 @@
 package net.mzouabi.ng2.server.document.dto;
 
-import net.mzouabi.ng2.server.dto.AbstractDTO;
+import net.mzouabi.ng2.server.main.dto.AbstractDTO;
 
 /**
  * Created by Luca on 07/04/2017.

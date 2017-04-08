@@ -1,4 +1,4 @@
-package net.mzouabi.ng2.server.dto;
+package net.mzouabi.ng2.server.main.dto;
 
 /**
  * Created by mouradzouabi on 05/03/16.

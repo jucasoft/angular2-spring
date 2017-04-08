@@ -13,48 +13,50 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
-
 @Service
 @Transactional
 public class PersonServiceImpl implements PersonService {
 
-        final static Logger LOG = LoggerFactory.getLogger(PersonServiceImpl.class);
+    final static Logger LOG = LoggerFactory.getLogger(PersonServiceImpl.class);
 
-        @Autowired
-        PersonRepository personRepository;
+    @Autowired
+    PersonRepository repository;
 
-        @Autowired
-        PersonMapper personMapper;
+    @Autowired
+    PersonMapper mapper;
 
     @Override
-    public Page<PersonDTO> findPersons(Pageable pageable) {
-        return personRepository.findAll(pageable).map(person -> personMapper.toDTO(person));
+    public PersonDTO create(PersonDTO value) {
+        Person item = mapper.toEntity(value);
+        item = repository.save(item);
+        return mapper.toDTO(item);
     }
 
     @Override
-    public PersonDTO getPerson(Long id) {
-        Person person = personRepository.getOne(id);
-        if (person == null) {
+    public void delete(Long id) {
+        repository.delete(id);
+    }
+
+    @Override
+    public PersonDTO update(PersonDTO value) {
+        Person person = repository.findOne(value.getId());
+        mapper.mapToEntity(value, person);
+        return get(value.getId());
+    }
+
+    @Override
+    public PersonDTO get(Long id) {
+        Person item = repository.getOne(id);
+        if (item == null) {
             return null;
         } else {
-            return personMapper.toDTO(person);
+            return mapper.toDTO(item);
         }
     }
 
     @Override
-    public void updatePerson(PersonDTO personDTO) {
-        Person person = personRepository.findOne(personDTO.getId());
-        personMapper.mapToEntity(personDTO, person);
+    public Page<PersonDTO> search(Pageable pagable) {
+        return repository.findAll(pagable).map(value -> mapper.toDTO(value));
     }
 
-    @Override
-    public void savePerson(PersonDTO personDTO) {
-        Person person = personMapper.toEntity(personDTO);
-        personRepository.save(person);
-    }
-
-    @Override
-    public void deletePerson(Long id) {
-        personRepository.delete(id);
-    }
 }
