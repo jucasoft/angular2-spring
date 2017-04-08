@@ -6,5 +6,5 @@ import {BaseService} from "@share/services/base.service";
 
 @Injectable()
 export class DocumentService extends BaseService<Document> {
-  protected service = 'document';
+  protected service = 'api/document';
 }

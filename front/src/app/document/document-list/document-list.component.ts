@@ -21,7 +21,7 @@ export class DocumentListComponent implements OnInit, Table<Document> {
 
   list: PaginationPage<Document>;
   self: Table<Document>;
-  currentItem:IEntity;
+  currentItem: IEntity;
 
   constructor(private service: DocumentService, private router: Router) {
 
@@ -41,11 +41,11 @@ export class DocumentListComponent implements OnInit, Table<Document> {
     return observable;
   }
 
-  goToDetails(item:IEntity) {
+  goToDetails(item: IEntity) {
     this.router.navigate(['document/item', item.id]);
   }
 
-  delete(item:IEntity) {
+  delete(item: IEntity) {
     let observable: Observable<Response> = this.service.delete(item);
     showLoading();
     observable.switchMap(() => {

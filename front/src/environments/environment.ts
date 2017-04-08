@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  webServiceEndpoint: 'http://localhost:8080/api/'
+  webServiceEndpoint: 'http://localhost:8080/'
 };

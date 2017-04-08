@@ -25,15 +25,15 @@ export class PersonService {
         let options = new RequestOptions({
             search: params
         });
-        return this.http.get(`${environment.webServiceEndpoint}/person`, options).map(this.extractData).publish().refCount();
+        return this.http.get(`${environment.webServiceEndpoint}api/person`, options).map(this.extractData).publish().refCount();
     }
 
     getPerson(id: number): Rx.Observable<Person> {
-        return this.http.get(`${environment.webServiceEndpoint}/person/${id}`).map(this.extractData).publish().refCount();
+        return this.http.get(`${environment.webServiceEndpoint}api/person/${id}`).map(this.extractData).publish().refCount();
     }
 
     deletePerson(id: number): Rx.Observable<Response> {
-        return this.http.delete(`${environment.webServiceEndpoint}/person/${id}`).publish().refCount();
+        return this.http.delete(`${environment.webServiceEndpoint}api/person/${id}`).publish().refCount();
     }
 
     private extractData(res: Response) {

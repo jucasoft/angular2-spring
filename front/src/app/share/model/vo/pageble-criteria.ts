@@ -1,8 +1,10 @@
 import {PaginationPropertySort} from "@share/pagination";
 import {ICriteria} from "@share/model/api/icriteria";
-export class PagebleCriteria implements ICriteria{
+import {URLSearchParams} from "@angular/http";
 
-  constructor(public page:number, public pageSize:number, public sort:PaginationPropertySort) {
+export class PagebleCriteria implements ICriteria {
+
+  constructor(public page: number, public pageSize: number, public sort: PaginationPropertySort) {
   }
 
   getParams(): URLSearchParams {
