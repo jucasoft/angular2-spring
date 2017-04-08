@@ -1,10 +1,10 @@
-package net.mzouabi.ng2.server.service;
+package net.mzouabi.ng2.server.document.service;
 
-import net.mzouabi.ng2.server.dto.DocumentDTO;
-import net.mzouabi.ng2.server.mapper.DocumentMapper;
-import net.mzouabi.ng2.server.model.Document;
-import net.mzouabi.ng2.server.model.Person;
-import net.mzouabi.ng2.server.repository.DocumentRepository;
+import net.mzouabi.ng2.server.document.dto.DocumentDTO;
+import net.mzouabi.ng2.server.document.mapper.DocumentMapper;
+import net.mzouabi.ng2.server.document.model.Document;
+import net.mzouabi.ng2.server.document.repository.DocumentRepository;
+import net.mzouabi.ng2.server.service.PersonServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

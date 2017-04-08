@@ -1,6 +1,6 @@
-package net.mzouabi.ng2.server.service;
+package net.mzouabi.ng2.server.document.service;
 
-import net.mzouabi.ng2.server.dto.DocumentDTO;
+import net.mzouabi.ng2.server.document.dto.DocumentDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

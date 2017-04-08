@@ -1,8 +1,8 @@
-package net.mzouabi.ng2.server.repository;
+package net.mzouabi.ng2.server.document.repository;
 
 import com.mysema.query.jpa.JPQLQuery;
 import com.mysema.query.jpa.impl.JPAQuery;
-import net.mzouabi.ng2.server.model.QDocument;
+import net.mzouabi.ng2.server.document.model.QDocument;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

@@ -1,4 +1,6 @@
-package net.mzouabi.ng2.server.dto;
+package net.mzouabi.ng2.server.document.dto;
+
+import net.mzouabi.ng2.server.dto.AbstractDTO;
 
 /**
  * Created by Luca on 07/04/2017.

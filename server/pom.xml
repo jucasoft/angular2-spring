@@ -97,7 +97,7 @@
 							<outputDiagnostics>true</outputDiagnostics>
 							<includes>
 								<!-- classpath du modele + classes référencées -->
-								<include>**/server/model/*.java</include>
+								<include>**/model/*.java</include>
 							</includes>
 						</configuration>
 					</execution>
@@ -115,9 +115,9 @@
 							<outputDiagnostics>true</outputDiagnostics>
 							<includes>
 								<!-- classpath du modele + classes référencées -->
-								<include>**/server/mapper/*.java</include>
-								<include>**/server/dto/*.java</include>
-								<include>**/server/model/*.java</include>
+								<include>**/mapper/*.java</include>
+								<include>**/dto/*.java</include>
+								<include>**/model/*.java</include>
 							</includes>
 						</configuration>
 					</execution>

@@ -1,7 +1,7 @@
-package net.mzouabi.ng2.server.mapper;
+package net.mzouabi.ng2.server.document.mapper;
 
-import net.mzouabi.ng2.server.dto.DocumentDTO;
-import net.mzouabi.ng2.server.model.Document;
+import net.mzouabi.ng2.server.document.dto.DocumentDTO;
+import net.mzouabi.ng2.server.document.model.Document;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.ReportingPolicy;
