@@ -1,4 +1,4 @@
-import {PaginationPage, PaginationPropertySort} from './pagination';
+import {PaginationPage, PaginationPropertySort} from '@share/pagination';
 
 import * as Rx from "rxjs/Rx";
 

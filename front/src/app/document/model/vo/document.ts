@@ -1,4 +1,4 @@
-import {EntityBase} from "@commons/model/vo/entity-base";
+import {EntityBase} from "@share/model/vo/entity-base";
 export class Document extends EntityBase{
 
   private _versione: number;

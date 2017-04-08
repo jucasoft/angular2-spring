@@ -1,8 +1,8 @@
 import {Observable} from "rxjs/Observable";
-import {ICriteria} from "@commons/model/api/icriteria";
-import {PaginationPage} from "../../pagination";
+import {ICriteria} from "@share/model/api/icriteria";
+import {PaginationPage} from "@share/pagination";
 import {Response} from "@angular/http";
-import {IEntity} from "@commons/model/api/ientity";
+import {IEntity} from "@share/model/api/ientity";
 export interface IService<T> {
   create(value: T): Observable<T>;
   delete(value:IEntity): Observable<Response>;

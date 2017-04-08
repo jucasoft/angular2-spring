@@ -5,19 +5,14 @@ import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 
 import {AppComponent} from "./app.component";
-import {PersonComponent} from "./person/person.component";
-import {PersonListComponent} from "./person-list/person-list.component";
-import {PersonService} from "./person.service";
 import {AppRoutingModule} from "./app-routing.module";
 import {DocumentModule} from "./document/document.module";
 import {ShareModule} from "./share/share.module";
+import {PersonModule} from "./person/person.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PersonComponent,
-    PersonListComponent,
-    PersonComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +21,10 @@ import {ShareModule} from "./share/share.module";
     AppRoutingModule,
     RouterModule,
     DocumentModule,
+    PersonModule,
     ShareModule
   ],
-  providers: [PersonService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

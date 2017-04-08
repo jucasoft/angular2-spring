@@ -1,16 +1,16 @@
 import {Component, OnInit} from "@angular/core";
-import {Table} from "../../table";
-import {PaginationPage, PaginationPropertySort} from "../../pagination";
+import {Table} from "@share/table";
+import {PaginationPage, PaginationPropertySort} from "@share/pagination";
 import {Router} from "@angular/router";
-import {doNothing, hideLoading, showLoading} from "../../commons";
+import {doNothing, hideLoading, showLoading} from "@share/commons";
 import {Response} from "@angular/http";
 
 import "rxjs/add/operator/switchMap";
 import {Observable} from "rxjs/Observable";
-import {PagebleCriteria} from "@commons/model/vo/pageble-criteria";
+import {PagebleCriteria} from "@share/model/vo/pageble-criteria";
 import {DocumentService} from "../service/document.service";
 import {Document} from "../model/vo/document";
-import {IEntity} from "@commons/model/api/ientity";
+import {IEntity} from "@share/model/api/ientity";
 
 @Component({
   selector: 'app-document-list',

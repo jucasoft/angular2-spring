@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Person} from './domain'
-import {PaginationPage, PaginationPropertySort} from './pagination';
+import {Person} from '../model/vo/person'
+import {PaginationPage, PaginationPropertySort} from '@share/pagination';
 import {Http, Response, URLSearchParams, RequestOptions} from '@angular/http';
 import * as Rx from "rxjs/Rx";
 import 'rxjs/add/operator/map';

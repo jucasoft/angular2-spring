@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DocumentService} from "../service/document.service";
-import {EntityBase} from "@commons/model/vo/entity-base";
+import {EntityBase} from "@share/model/vo/entity-base";
 import {Observable} from "rxjs/Observable";
-import {doNothing, hideLoading, showLoading} from "../../commons";
+import {doNothing, hideLoading, showLoading} from "@share/commons";
 import {Response} from "@angular/http";
 
 @Component({

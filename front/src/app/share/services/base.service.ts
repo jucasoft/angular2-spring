@@ -1,13 +1,13 @@
 import {Injectable} from "@angular/core";
-import {IService} from "@commons/services/iservice";
+import {IService} from "@share/services/iservice";
 import {Http, RequestOptions, Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import {environment} from "@environments/environment";
-import {PaginationPage} from "../../pagination";
-import {ICriteria} from "@commons/model/api/icriteria";
+import {PaginationPage} from "@share/pagination";
+import {ICriteria} from "@share/model/api/icriteria";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/publish";
-import {IEntity} from "@commons/model/api/ientity";
+import {IEntity} from "@share/model/api/ientity";
 
 @Injectable()
 export class BaseService<T> implements IService<T> {
@@ -26,7 +26,7 @@ export class BaseService<T> implements IService<T> {
     return null;
   }
 
-  delete(item:IEntity): Observable<Response> {
+  delete(item: IEntity): Observable<Response> {
     return this.http.delete(`${this.getUrl()}/${item.id}`).publish().refCount();
   }
 
@@ -34,7 +34,7 @@ export class BaseService<T> implements IService<T> {
     return null;
   }
 
-  get(id:number): Observable<T> {
+  get(id: number): Observable<T> {
     return this.http.get(`${this.getUrl()}/${id}`).map(this.extractData).publish().refCount();
   }
 

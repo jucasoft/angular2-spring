@@ -5,11 +5,11 @@ import * as Rx from 'rxjs/Rx';
 
 import 'rxjs/add/operator/switchMap';
 
-import {PaginationPage, PaginationPropertySort} from '../pagination';
-import {Table} from '../table';
-import {showLoading, hideLoading, doNothing} from '../commons'
-import {PersonService} from '../person.service';
-import {Person} from '../domain';
+import {PaginationPage, PaginationPropertySort} from '@share/pagination';
+import {Table} from '@share/table';
+import {showLoading, hideLoading, doNothing} from '@share/commons'
+import {PersonService} from '../service/person.service';
+import {Person} from '../model/vo/person';
 
 
 @Component({
@@ -40,7 +40,7 @@ export class PersonListComponent implements OnInit, Table<Person> {
     }
 
     goToDetails(person) {
-        this.router.navigate(['person', person.id]);
+        this.router.navigate(['person/detail', person.id]);
     }
 
     delete(person) {

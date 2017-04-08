@@ -18,7 +18,8 @@
     ],
     "paths": {
       "@environments/*":["environments/*"],
-      "@commons/*":["app/commons/*"]
+      "@share/*":["app/share/*"],
+      "@table/*":["app/share/table/*"]
     }
   }
 }
